@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>STARVE - Order Food</title>
+    <link rel="stylesheet" href="Style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<header>
+    <nav class="navbar"> 
+        <div class="logo"><a href="mainpage.html">🍴 <span>STARVE</span></a></div>
+        <ul class="navlinks">
+            <li><a href="#" id="ordersBtn">My Orders</a></li>
+            <li><a href="#" id="cartBtn">Cart (<span id="cartCount">0</span>)</a></li>
+            <li><a href="Login.html">Signout</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="main-content">
+    <div class="hero-section">
+        <h1>Hungry? Order Now! 🍽️</h1>
+        <p>Discover amazing restaurants near you</p>
+    </div>
+
+    <div class="restaurants-container" id="restaurantsContainer">
+        <!-- Restaurants will be loaded here -->
+    </div>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+            <button class="close-cart" id="closeCart">&times;</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <p class="empty-cart">Your cart is empty</p>
+        </div>
+        <div class="cart-footer">
+            <div id="cartBreakdown"></div>
+            <div class="cart-total">
+                <strong>Total: <span id="cartTotal">0</span> EGP</strong>
+            </div>
+            <div class="cart-address-section" id="cartAddressSection" style="display: none;">
+                <label for="deliveryAddress">Delivery Address:</label>
+                <input type="text" id="deliveryAddress" placeholder="Enter your delivery address" class="address-input">
+            </div>
+            <button class="checkout-btn" id="checkoutBtn">Checkout</button>
+        </div>
+    </div>
+
+    <!-- Orders Modal -->
+    <div class="modal" id="ordersModal">
+        <div class="modal-content orders-modal">
+            <span class="close" id="closeOrders">&times;</span>
+            <h2>My Orders</h2>
+            <div id="ordersList" class="orders-list">
+                <!-- Orders will be loaded here -->
+            </div>
+        </div>
+    </div>
+</main>
+
+<script src="mainpage.js"></script>
+</body>
+</html>

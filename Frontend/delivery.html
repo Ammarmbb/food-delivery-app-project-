@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delivery Panel - STARVE</title>
+    <link rel="stylesheet" href="Style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<header>
+    <nav class="navbar"> 
+        <div class="logo"><a href="delivery.html">🚚 STARVE Delivery</a></div>
+        <ul class="navlinks">
+            <li><a href="Login.html">Signout</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="delivery-main">
+    <div class="delivery-header">
+        <h1>🚚 Delivery Dashboard</h1>
+        <p class="delivery-subtitle">Accept orders and manage your deliveries</p>
+        <div class="status-filters">
+            <button class="filter-btn" data-tab="available" onclick="showTab('available')">
+                <span class="btn-icon">📋</span>
+                <span>Available Orders</span>
+                <span class="badge-count" id="availableCount">0</span>
+            </button>
+            <button class="filter-btn active" data-tab="my-orders" onclick="showTab('my-orders')">
+                <span class="btn-icon">✅</span>
+                <span>My Orders</span>
+                <span class="badge-count" id="myOrdersCount">0</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Available Orders Section -->
+    <div id="availableOrdersSection" class="orders-section" style="display: none;">
+        <h2 class="section-title">Available Orders to Accept</h2>
+        <div id="availableOrdersList" class="deliveries-container">
+            <!-- Available orders will be loaded here -->
+        </div>
+    </div>
+
+    <!-- My Orders Section -->
+    <div id="myOrdersSection" class="orders-section">
+        <h2 class="section-title">My Accepted Orders</h2>
+        <div class="status-filters-inline">
+            <button class="filter-btn-small active" data-status="all" onclick="filterMyOrders('all')">All</button>
+            <button class="filter-btn-small" data-status="accepted" onclick="filterMyOrders('accepted')">Accepted</button>
+            <button class="filter-btn-small" data-status="on_the_way" onclick="filterMyOrders('on_the_way')">On Way</button>
+            <button class="filter-btn-small" data-status="delivered" onclick="filterMyOrders('delivered')">Delivered</button>
+        </div>
+        <div id="deliveriesList" class="deliveries-container">
+            <!-- My deliveries will be loaded here -->
+        </div>
+    </div>
+</main>
+
+<script src="delivery.js"></script>
+</body>
+</html>
+

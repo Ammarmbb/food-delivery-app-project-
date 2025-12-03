@@ -1,0 +1,43 @@
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>OTHER LOGIN OPTIONS</title>
+        <link rel="stylesheet" href="Style.css">
+    </head>
+    <body>
+    <header>
+        <h2><a href="Login.html"><div class="gg-arrow-left-r"></div></a></h2>
+        <h1>Other Login Options</h1>
+    </header>
+
+    <div class="LoginForm">
+        <fieldset class="fieldset">
+            <legend class="legend">Other Login Options</legend>
+
+            <!-- Collapsible Buttons -->
+            <input type="button" value="Login As Admin" id="admincollapsable">
+            <input type="button" value="Login As Delivery" id="deliverycollapsable">
+
+            <!-- Admin Panel -->
+            <div class="login-panel" id="loginadmin">
+                <input type="text" id="adminemail" placeholder="Admin@example.com">
+                <p id="aemailerror" class="error"></p>
+                <input type="password" id="adminpass" placeholder="********">
+                <p id="apasserror" class="error"></p>
+                <input type="button" id="adminsubmit" value="Submit">
+            </div>
+
+            <!-- Delivery Panel -->
+            <div class="login-panel" id="login-delivery">
+                <input type="text" id="deliveryemail" placeholder="Delivery@example.com">
+                <p id="demailerror" class="error"></p>
+                <input type="password" id="deliverypass" placeholder="********">
+                <p id="dpasserror" class="error"></p>
+                <input type="button" id="deliverysubmit" value="Submit">
+            </div>
+        </fieldset>
+    </div>
+
+    <script src="admin.js"></script>
+    </body>
+    </html>

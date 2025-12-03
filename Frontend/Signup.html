@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Signup</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+    <header>
+        <h2><a href="Login.html"><div class="gg-arrow-left-r"></div></a></h2>
+        <h1>Signup</h1>
+    </header>
+    <div class="SignupForm">
+        <form>
+            <fieldset>
+                <legend>Signup Details</legend>
+                <label for="sname">Name</label>
+                <input type="text" id="sname" placeholder="Your Name">
+                <p id="name-error" class="error"></p>
+                <label for="Signupemail">Email</label>
+                <input type="text" id="Signupemail" placeholder="example@hotmail.com">
+                <p id="Semail-error" class="error"></p>
+                <label for="Signuppassword">Password</label>
+                <input type="password" id="Signuppassword" placeholder="********">
+                <p id="Spass-error" class="error"></p>
+                <label for="cpassword">Confirm Password</label>
+                <input type="password" id="cpassword" placeholder="********">
+                <p id="cpass-error" class="error"></p>
+                <input type="button" value="Signup" id="signupbutton">
+            </fieldset>
+        </form>
+    </div>
+    <script src="signup.js"></script>
+</body>
+</html>

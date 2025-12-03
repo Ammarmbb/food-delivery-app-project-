@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Restaurant Menu - STARVE</title>
+    <link rel="stylesheet" href="Style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar"> 
+            <div class="logo"><a href="mainpage.html">🍴 STARVE</a></div>
+            <ul class="navlinks">
+                <li><a href="mainpage.html">← Back</a></li>
+                <li><a href="mainpage.html" id="cartLink">Cart (<span id="cartCount">0</span>)</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="menu-page">
+        <div class="restaurant-header">
+            <img id="restImage" class="rest-banner" alt="Restaurant">
+            <div class="restaurant-details">
+                <h1 id="restName"></h1>
+                <p id="restDesc"></p>
+                <div class="restaurant-meta">
+                    <span>⏱ <span id="restTime"></span> min</span>
+                    <span>💵 <span id="restPrice"></span> EGP delivery</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-section">
+            <h2>Menu Items</h2>
+            <div id="menuList" class="menu-grid"></div>
+        </div>
+    </main>
+
+    <script>
+        // Update cart count
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+            document.getElementById('cartCount').textContent = count;
+        }
+        updateCartCount();
+        setInterval(updateCartCount, 1000);
+    </script>
+    <script src="menu.js"></script>
+</body>
+</html>

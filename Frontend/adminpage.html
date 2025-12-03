@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<title>Admin Panel - STARVE</title>
+<link rel="stylesheet" href="Style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+<header>
+    <nav class="navbar"> 
+        <div class="logo"><a href="adminpage.html">🍴 STARVE Admin</a></div>
+        <ul class="navlinks">
+            <li><a href="#" id="statsBtn">📊 Statistics</a></li>
+            <li><a href="Login.html">Signout</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="admin-main">
+    <div class="admin-header">
+        <h1>Restaurant Management</h1>
+        <button class="add-btn" id="Additembt">➕ Add Restaurant</button>
+    </div>
+
+    <div id="restaurantList" class="restaurant-grid"></div>
+
+    <!-- Add/Edit Restaurant Modal -->
+    <div class="modal" id="addModal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <h2 id="modalTitle">Add Restaurant</h2>
+
+            <label>Restaurant Name:</label>
+            <input type="text" id="rname" placeholder="Restaurant Name">
+            <p id="name-error" class="error"></p>
+
+            <label>Restaurant Image:</label>
+            <input type="file" id="rimageFile" accept="image/*">
+            <p id="Image-error" class="error"></p>
+            <div id="restaurantImagePreview" style="margin-top: 10px; display: none;">
+                <img id="previewRestaurantImg" src="" alt="Preview" style="max-width: 200px; max-height: 200px; border-radius: 8px;">
+            </div>
+            <input type="hidden" id="rimage" value="">
+
+            <label>Description:</label>
+            <textarea id="rdesc" placeholder="Restaurant description" rows="3"></textarea>
+            <p id="dec-error" class="error"></p>
+
+            <label>Delivery Time (minutes):</label>
+            <input type="number" id="dtime" placeholder="30" min="1">
+            <p id="time-error" class="error"></p>
+
+            <label>Delivery Price (EGP):</label>
+            <input type="number" id="dprice" placeholder="20" min="0" step="0.01">
+            <p id="price-error" class="error"></p>
+
+            <button id="saveRestaurant" class="save-btn">Save</button>
+            <button id="cancelEdit" class="cancel-btn" style="display:none;">Cancel</button>
+        </div>
+    </div>
+
+    <!-- Menu Management Modal -->
+    <div class="modal" id="menuModal">
+        <div class="modal-content">
+            <span class="close" id="closeMenuModal">&times;</span>
+            <h2 id="menuModalTitle">Menu Items</h2>
+            <div id="menuItemsList" class="menu-items-list"></div>
+            <button class="add-btn" id="addMenuItemBtn">➕ Add Menu Item</button>
+        </div>
+    </div>
+
+    <!-- Add/Edit Menu Item Modal -->
+    <div class="modal" id="menuItemModal">
+        <div class="modal-content">
+            <span class="close" id="closeMenuItemModal">&times;</span>
+            <h2 id="menuItemModalTitle">Add Menu Item</h2>
+
+            <label>Item Name:</label>
+            <input type="text" id="itemName" placeholder="Item Name">
+            <p id="item-name-error" class="error"></p>
+
+            <label>Item Description:</label>
+            <textarea id="itemDesc" placeholder="Item description" rows="2"></textarea>
+            <p id="item-desc-error" class="error"></p>
+
+            <label>Item Image:</label>
+            <input type="file" id="itemImageFile" accept="image/*">
+            <p id="item-image-error" class="error"></p>
+            <div id="imagePreview" style="margin-top: 10px; display: none;">
+                <img id="previewImg" src="" alt="Preview" style="max-width: 200px; max-height: 200px; border-radius: 8px;">
+            </div>
+            <input type="hidden" id="itemImage" value="">
+
+            <label>Price (EGP):</label>
+            <input type="number" id="itemPrice" placeholder="50" min="0" step="0.01">
+            <p id="item-price-error" class="error"></p>
+
+            <button id="saveMenuItem" class="save-btn">Save</button>
+            <button id="cancelMenuItem" class="cancel-btn" style="display:none;">Cancel</button>
+        </div>
+    </div>
+
+    <!-- Statistics Modal -->
+    <div class="modal" id="statsModal">
+        <div class="modal-content stats-modal">
+            <span class="close" id="closeStats">&times;</span>
+            <h2>📊 Statistics</h2>
+            <div id="statsContent" class="stats-content">
+                <div class="stat-card">
+                    <h3>Total Restaurants</h3>
+                    <p id="totalRestaurants">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Total Orders</h3>
+                    <p id="totalOrders">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Total Revenue</h3>
+                    <p id="totalRevenue">0 EGP</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Pending Orders</h3>
+                    <p id="pendingOrders">0</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script src="adminpage.js"></script>
+</body>
+</html>

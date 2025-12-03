@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+<header>
+    <h1>Login 🍴</h1>
+</header>
+
+<div class="LoginForm">
+    <form>
+        <fieldset>
+            <legend>Login Details</legend>
+
+            <label for="loginemail">Email</label>
+            <input type="text" id="loginemail" placeholder="example@hotmail.com">
+            <p id="lemail-error" class="error"></p>
+
+            <label for="loginpassword">Password</label>
+            <input type="password" id="loginpassword" placeholder="********">
+            <p id="lpass-error" class="error"></p>
+
+            <input type="button" value="Login" id="loginbutton">
+        </fieldset>
+    </form>
+
+    <input type="button" value="Signup" onclick="location.href='Signup.html'">
+    <input type="button" value="Other Options" onclick="location.href='other.html'">
+</div>
+
+<script src="Login.js"></script>
+</body>
+</html>
